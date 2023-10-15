@@ -1,0 +1,27 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>convidado</title>
+
+<body>
+<center>
+<h1>Convidado</h1>
+
+<form action="/salvar-convidados" method="post">
+</br>
+    
+    <label for="non">Nome Convidado </label> <input name="nome" id="non" type="text"/>
+    </br></br>
+    <label for="rgg">RG </label> <input name="rg" id="rgg" type="number"/>
+    </br></br>
+    <label for="cef">CPF </label> <input name="cpf" id="cpf" type="number"/>
+    </br></br>
+     <input id="sal" title="Salvar" type="submit"/>
+   
+</form>
+
+ </center>
+</body>
+</html>

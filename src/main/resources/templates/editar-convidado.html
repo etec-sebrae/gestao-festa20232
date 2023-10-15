@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>convidado</title>
+
+<body>
+<center>
+<h1>Convidado</h1>
+
+<form action="/salvar-convidados" method="post" th:object="${convidado}">
+</br>
+    
+    <input type="hidden" id="idConvidado" name="idConvidado" th:field="*{idConvidado}">
+    
+    <label for="non">Nome Convidado </label> <input name="nome" id="non" type="text" th:field="*{nome}"/>
+    </br></br>
+    <label for="rg">RG </label> <input name="rg" id="rg" type="number" th:field="*{rg}"/>
+    </br></br>
+    <label for="cpf">CPF </label> <input name="cpf" id="cpf" type="number" th:field="*{cpf}"/>
+    </br></br>
+     <input id="sal" title="Salvar" type="submit"/>
+   
+</form>
+
+ </center>
+</body>
+</html>
