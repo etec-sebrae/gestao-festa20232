@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.gov.sp.etec.gestaofesta.model.Convidado;
+import br.gov.sp.etec.gestaofesta.model.Evento;
 import br.gov.sp.etec.gestaofesta.repository.ConvidadoRepository;
+import br.gov.sp.etec.gestaofesta.repository.EventoRepository;
 
 @Controller
 public class ConvidadoController {
@@ -23,9 +25,17 @@ public class ConvidadoController {
   @Autowired
   ConvidadoRepository repo;
   
+  @Autowired
+  EventoRepository eventoRepository;
+  
+  
+  
   @GetMapping("cadastro-convidado")
-  public String convida() {
-	  return "convidado";
+  public ModelAndView convida() {
+	  ModelAndView view = new ModelAndView("convidado");
+	  List<Evento> eventos = eventoRepository.findAll();
+	  view.addObject("eventos", eventos);
+	  return view;
 	  
   }
   

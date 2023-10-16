@@ -2,10 +2,12 @@ package br.gov.sp.etec.gestaofesta.model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Evento {
@@ -24,6 +26,9 @@ public class Evento {
 	
 	private LocalTime horaff;
 
+	@OneToMany
+	List<Convidado> convidados;
+	
 	public Long getId() {
 		return id;
 	}
@@ -71,7 +76,13 @@ public class Evento {
 	public void setHoraff(LocalTime horaff) {
 		this.horaff = horaff;
 	}
-	
-	
+
+	public List<Convidado> getConvidados() {
+		return convidados;
+	}
+
+	public void setConvidados(List<Convidado> convidados) {
+		this.convidados = convidados;
+	}	
 	
 }

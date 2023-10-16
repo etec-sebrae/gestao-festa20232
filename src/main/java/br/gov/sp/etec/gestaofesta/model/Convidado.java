@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Convidado {
@@ -14,6 +15,8 @@ public class Convidado {
 	private String rg;
 	private String cpf;
 	
+	@ManyToOne
+	private Evento evento;
 	
 	public long getIdConvidado() {
 		return idConvidado;
@@ -50,5 +53,14 @@ public class Convidado {
 		this.numeroacompanhante = numeroacompanhante;
 	}
 	private int numeroacompanhante;
+
+	public Evento getEvento() {
+		return evento;
+	}
+	public void setEvento(Evento evento) {
+		this.evento = evento;
+	}
+	
+	
 	
 }
